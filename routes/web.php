@@ -26,3 +26,5 @@ Route::get('list', [StudentController::class,'list']);
 
 Route::get('editstu/{id}', [StudentController::class,'editStu']);
 Route::post('edit', [StudentController::class,'edit']);
+
+Route::get('search', [StudentController::class,'search']);

@@ -37,7 +37,7 @@ $student->save();
 // }
     }
      function list() {
-        $data= Student::all();
+        $data= Student::paginate(2);
         return view('lists',['req'=>$data]);
 
      }  
@@ -61,5 +61,11 @@ $student->save();
        if($isUpdated){
         return redirect('list');
        }
+    }
+
+    function search(Request $request){
+
+        $studentData = Student::where('name','like',"%$request->search%")->get();
+    return view('lists',['req'=>$studentData,'search'=>$request->search]);   
     }
 }

@@ -1,4 +1,9 @@
 <div>
+    <h1>Student List</h1>
+    <form action="/search" method="get">
+        <input type="text" placeholder="Search With Name" name="search" value="{{ $search ?? '' }}">
+        <button>Search</button>
+    </form>
     <table border="1">
         <tr>
             <td>Name</td>
@@ -17,4 +22,12 @@
             </tr>
         @endforeach
     </table>
+    {{ $req->links() }}
 </div>
+
+
+<style>
+    .w-5.h-5 {
+        width: 20px;
+    }
+</style>
